@@ -1,0 +1,504 @@
+/*
+Colors used (Body)
+Primary Color (Blue): #222D53;
+Secondary Color (dark gray): #1F1F1F;
+Tertiary Color (light gray): #BEBEBE;
+
+(text)
+Primary text (very light gray): #D5D5D5;
+Secondary text (white): #FFFFFF;
+Tertiary text (black): #000000;
+
+(hyper links buttons)
+text (very light gray): #D5D5D5;
+hover (light gold): #F7E095;
+visited (light blue): #95EFF7;
+active (lightgreen): #95F7AC;
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+* body {
+  background-color: #222d53;
+  font-family: 'Arsenal', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #d5d5d5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 2.25em;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.75em;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 1.35em;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.25em;
+  font-weight: 400;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color: #d5d5d5;
+  font-size: 1.25em;
+  text-decoration: none;
+  /* No underlining */
+}
+
+a:visited {
+  /* visited link */
+  color: #95eff7;
+}
+
+a:hover,
+a:focus {
+  color: #f7e095;
+  text-decoration: underline;
+  /* Underlining when hovering over a link */
+}
+
+a:active {
+  /* selected link */
+  color: #95f7ac;
+}
+
+.button {
+  display: inline-block;
+  background-color: #1f1f1f;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid #d5d5d5;
+  transition-duration: 0.2s;
+  transition-property: opacity;
+}
+
+.button:hover {
+  opacity: 0.75;
+  /* Reduces the opacity of the button to 80% */
+  text-decoration: none;
+}
+
+.button:active {
+  display: inline-block;
+  /* since the <a> tag is inline by default, we need to change this to inline-block, but more on this in the next exercise */
+  background-color: #95f7ac;
+  color: #000;
+  /* needed to override the default link color */
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid #d5d5d5;
+  /* width of the border, type, color */
+  transition: 0.2s opacity;
+}
+
+.button.contact {
+  background-color: transparent;
+  color: #000;
+  text-transform: uppercase;
+  border: 2px solid #fff;
+  text-align: center;
+  transition-duration: 0.2s;
+  transition-property: opacity;
+}
+
+.button.contact:hover {
+  opacity: 0.9;
+  /* Reduces the opacity of the button to 80% */
+  text-decoration: none;
+}
+
+.button.contact:active {
+  display: inline-block;
+  /* since the <a> tag is inline by default, we need to change this to inline-block */
+  background-color: #fff;
+  color: #000;
+  /* needed to override the default link color */
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid #d5d5d5;
+  /* width of the border, type, color */
+  transition: 0.2s opacity;
+}
+
+header {
+  background-color: #1f1f1f;
+  padding: 10px 0 4px;
+  border-bottom: 3px solid #4a4a4a;
+  box-shadow: 4px 4px 11px 1px rgba(50, 50, 50, 0.95);
+  position: fixed;
+  width: 100%;
+}
+
+/* Layout styling */
+.container {
+  padding: 0 15px;
+}
+
+.row {
+  margin: 25px 0;
+  /* 25px top and bottom, 0 left and right */
+}
+
+#hero h1 {
+  text-align: center;
+}
+
+.logo {
+  max-width: 100px;
+}
+
+nav>ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav>ul>li>a {
+  padding: 0 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+}
+
+nav>ul>li>a:visited {
+  padding: 0 10px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #f7e095;
+}
+
+nav>ul>li>a:hover {
+  padding: 0 10px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #95eff7;
+}
+
+nav>ul>li>a:visited {
+  padding: 0 10px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #f7e095;
+}
+
+nav>ul>li>a:active {
+  padding: 0 10px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #95f7ac;
+}
+
+.navtoggle li:not(:last-child) {
+  display: none;
+}
+
+.navtoggle,
+.navtoggle.responsive {
+  position: relative;
+}
+
+.navtoggle li .icon {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  font-size: 20px;
+  padding-right: 0;
+}
+
+.navtoggle.responsive nav {
+  padding: 24px 0 0;
+}
+
+.navtoggle.responsive li {
+  display: block;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 127, 80, 0.5);
+}
+
+.navtoggle.responsive li:last-child {
+  padding: 0 0 10px;
+}
+
+#hero {
+  text-align: center;
+  background-color: #1f1f1f;
+  padding: 10px 0;
+  display: inline-block;
+  width: 100%;
+}
+
+#mywork {
+  text-align: center;
+}
+
+#mywork p {
+  text-align: left;
+}
+
+main {
+  padding-top: 100px;
+}
+
+#contact {
+  text-align: center;
+  background-color: #bebebe;
+  padding: 10px 0;
+  display: inline-block;
+  width: 100%;
+}
+
+#contact h2 {
+  color: #1f1f1f;
+}
+
+#contact p {
+  text-align: center;
+  color: #1f1f1f;
+}
+
+#phonenumber {
+  color: #0a7de0;
+}
+
+#skypeid {
+  color: #0a7de0;
+}
+
+.behancelogo {
+  width: 65px;
+}
+
+.linkedinlogo {
+  max-width: 65px;
+}
+
+#about {
+  text-align: center;
+}
+
+picture {
+  max-width: 250px;
+}
+
+#mystory {
+  text-align: center;
+}
+
+#mystory p {
+  text-align: left;
+}
+
+#skills {
+  text-align: center;
+}
+
+#rskills {
+  text-align: center;
+}
+
+#rskills ul {
+  text-align: left;
+}
+
+#tools {
+  text-align: center;
+}
+
+#tools ul {
+  text-align: left;
+}
+
+#project {
+  text-align: center;
+}
+
+#project h3 {
+  text-align: left;
+}
+
+#project p {
+  text-align: left;
+}
+
+#my-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+}
+
+#sociallinks .links {
+  display: inline-block;
+}
+
+/* ==============================
+Medium devices (640px and larger)
+================================= */
+@media only screen and (min-width: 640px) {
+  header {
+    text-align: unset;
+    padding: 20px 0 13px;
+  }
+
+  nav {
+    width: auto;
+    float: right;
+    margin-top: 20px;
+  }
+
+  nav>ul {
+    margin: 1em 0;
+  }
+
+  nav>ul>li {
+    display: inline-block;
+  }
+
+  .navtoggle li:not(:last-child) {
+    display: inline-block;
+  }
+
+  .navtoggle li:last-child {
+    display: none;
+  }
+
+  main {
+    padding-top: 110px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  #hero span {
+    display: block;
+  }
+
+  .col-md-6 {
+    width: 50%;
+  }
+
+  [class*="col-"] {
+    float: left;
+  }
+
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  #about-page h3 {
+    margin-top: 0;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  #about {
+    text-align: center;
+  }
+
+  #my-img {
+    width: 500px;
+  }
+}
+
+/* ==============================
+Large devices (1024px or larger)
+================================= */
+@media only screen and (min-width: 1024px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  .col-lg-7 {
+    width: 58.33%;
+  }
+
+  .col-lg-5 {
+    width: 41.66%;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ==============================
+X-large devices (1440px or larger) code woul be @media only screen and (min-width: 1440px) {}
+================================= */
+.imgwrapper,
+.deswrapper {
+  padding: 10px;
+}
+
+@keyframes color-change {
+  0% {
+    fill: #fff200;
+  }
+
+  50% {
+    fill: #fcffad;
+  }
+
+  100% {
+    fill: #f76414;
+  }
+}
+
+.sun {
+  animation: 4s color-change infinite alternate linear;
+}
+
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 1px);
+  }
+
+  to {
+    transform: translate(200px, 1px);
+  }
+}
+
+.clouds {
+  animation: 30s cloud-move infinite alternate linear;
+}
